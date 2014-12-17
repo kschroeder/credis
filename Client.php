@@ -600,6 +600,7 @@ class Credis_Client {
     {
     	list($command, $channel, $subscribedChannels) = $this->__call('punsubscribe', func_get_args());
     	$this->subscribed = $subscribedChannels > 0;
+    	return array($command, $channel, $subscribedChannels);
     }
 
     /**
@@ -654,6 +655,7 @@ class Credis_Client {
     {
     	list($command, $channel, $subscribedChannels) = $this->__call('unsubscribe', func_get_args());
     	$this->subscribed = $subscribedChannels > 0;
+    	return array($command, $channel, $subscribedChannels);
     }
 
     /**
